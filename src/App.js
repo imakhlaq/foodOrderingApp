@@ -4,7 +4,7 @@ import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 
 function App() {
-  const [cartState, setCartState] = useState(false);
+  const [cartState, setCartState] = useState(true);
 
   const closeCart = () => {
     setCartState(false);
@@ -14,9 +14,9 @@ function App() {
   };
   return (
     <>
-      <Header />
+      <Header onOpenCart={openCart}/>
       <main>
-        {cartState && <Cart />}
+        {cartState && <Cart onCloseCart={closeCart} />}
         <Meals />
       </main>
     </>
