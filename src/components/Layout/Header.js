@@ -1,4 +1,4 @@
-import mealsImg from "../assests/meals.jpg";
+import mealsImg from "../../assests/meals.jpg";
 import classes from "./Header.module.css";
 import HeaderCardButton from "./HeaderCardButton";
 
