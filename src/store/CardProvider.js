@@ -1,6 +1,11 @@
 import CardContext from "./cart-context";
+import { useReducer } from "react";
+
+const cardReducerFn = (prevS, action) => {};
 
 const CartProvider = (props) => {
+  const [state, dispatch] = useReducer(cardReducerFn, {});
+
   const addItemToCartHandler = (item) => {};
 
   const removeItemfromCartHandler = (id) => {};
