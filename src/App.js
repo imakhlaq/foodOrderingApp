@@ -5,7 +5,7 @@ import CartProvider from "./store/CardProvider";
 import { useState } from "react";
 
 function App() {
-  const [cartState, setCartState] = useState(true);
+  const [cartState, setCartState] = useState(false);
 
   const closeCart = () => {
     setCartState(false);

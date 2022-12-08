@@ -6,15 +6,27 @@ const defaultCartState = {
   totalAmount: 0,
 };
 const cardReducerFn = (prevS, action) => {
+  if (action.type === "ADD") {
+    const upatedItems = prevS.items.concat(action.item);
+    const updatedPrice =
+      prevS.totalAmount + action.item.price * action.item.amount;
+  }
+  if (action.type === "REMOVE") {
+    
+  }
   return defaultCartState;
 };
 
 const CartProvider = (props) => {
   const [cardState, dispatch] = useReducer(cardReducerFn, defaultCartState);
 
-  const addItemToCartHandler = (item) => {};
+  const addItemToCartHandler = (item) => {
+    dispatch({ type: "ADD", item });
+  };
 
-  const removeItemfromCartHandler = (id) => {};
+  const removeItemfromCartHandler = (id) => {
+    dispatch({ type: "REMOVE", id });
+  };
 
   const cartContext = {
     items: defaultCartState.items,
