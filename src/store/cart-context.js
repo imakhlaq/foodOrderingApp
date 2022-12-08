@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 const CardContext = createContext({
-  item: [],
+  items: [],
   totalAmount: 0,
   addItem: (item) => {},
   removeItem: (id) => {},
