@@ -1,7 +1,9 @@
 import classes from "./Model.module.css";
 import { createPortal } from "react-dom";
 const BackDrop = (props) => {
-  return <div className={classes.backdrop}></div>;
+  return (
+    <div className={classes.backdrop} onClick={props.onBackdropClick}></div>
+  );
 };
 
 const Overlay = (props) => {
@@ -16,7 +18,10 @@ const modelWindow = document.getElementById("overlays");
 const Model = (props) => {
   return (
     <>
-      {createPortal(<BackDrop />, modelWindow)}
+      {createPortal(
+        <BackDrop onBackdropClick={props.onBackdropClick} />,
+        modelWindow
+      )}
       {createPortal(<Overlay>{props.children}</Overlay>, modelWindow)}
     </>
   );
