@@ -10,9 +10,12 @@ const cardReducerFn = (prevS, action) => {
     const upatedItems = prevS.items.concat(action.item);
     const updatedPrice =
       prevS.totalAmount + action.item.price * action.item.amount;
+    return {
+      items: upatedItems,
+      totalAmount: updatedPrice,
+    };
   }
   if (action.type === "REMOVE") {
-    
   }
   return defaultCartState;
 };

@@ -7,13 +7,9 @@ const MealItemForm = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const enterdAmount = +amountInput.current.value;
+    const enterdAmount = amountInput.current.value;
 
-    if (
-      enterdAmount.trim().length === 0 ||
-      enterdAmount < 1 ||
-      enterdAmount > 5
-    ) {
+    if (enterdAmount < 1 || enterdAmount > 5) {
       setFormState(false);
       return;
     }
